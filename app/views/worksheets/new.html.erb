@@ -1,0 +1,18 @@
+<h1>Values & Behaviors</h1>
+<p class="text-muted">(page 1 of 3)</p>
+
+<p>Every organization operates according to a set of values and default behaviors. Sometimes these are codified in company values documents, sometimes the espoused values are not backed up by actual behavior (rectifying this gap is itself an adaptive leadership challenge), and sometimes it's simply unwritten culture built up over time.</p>
+
+<p>Think about the key values and behaviors in your organization that <strong>need to change</strong> in order for you to successfully lead adaptive change. Add them here -- it's good to be thorough, but it might be best to keep the list to a manageable number. If necessary, you can break your challenge into smaller components and complete this worksheet more than once, targeted each smaller portion as you go.</p>
+
+<div class="behaviors" id="new_behaviors_forms">
+
+</div>
+
+<%= simple_form_for(@worksheet) do |f| %>
+
+	<%= f.input :change_needed, placeholder: 'e.g. To survive, we must cannibalize our reseller network.', as: :text %>
+
+	<%= f.button :submit, 'Next page', class: 'btn btn-primary' %>
+	
+<% end %>

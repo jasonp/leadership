@@ -3,6 +3,7 @@ class CreateValues < ActiveRecord::Migration
     create_table :values do |t|
       t.integer :worksheet_id
       t.text :content
+      t.string :temporary_worksheet_code
 
       t.timestamps null: false
     end

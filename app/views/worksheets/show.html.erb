@@ -1,0 +1,8 @@
+<p class="text-success"><%= @worksheet.change_needed %></p>
+
+<p>Values:</p>
+<ol>
+	<% @worksheet.values.each do |val| %>
+		<li><%= val.content %></li>
+	<% end %>	
+</ol>

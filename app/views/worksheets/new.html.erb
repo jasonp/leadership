@@ -17,19 +17,15 @@
 </div>
 
 <div class="values" id="new_values_forms">
-	<%= simple_form_for(@value) do |f| %>
-	
-		<%= f.input :content, input_html: { maxlength: 60 }, label: 'Value:', label_html: { class: 'sr-only' }, placeholder: 'e.g. Customers first' %>
-		<%= f.button :submit, 'Add This Value or Behavior', class: 'btn btn-primary' %>
-	
-	<% end %>
-
+	<%= render 'new_value_form' %>
 </div>
 
 <div class="form_div bump20">
 	<%= simple_form_for(@worksheet) do |f| %>
 
 		<%= f.input :change_needed, label: 'How do these values or behaviors need to change?', hint: 'In a few sentences or less, describe the change you hope to accomplish in terms of the values or behaviors you listed above.', placeholder: 'e.g. To survive, we must cannibalize our reseller network.' %>
+		
+		<%= f.hidden_field :temporary_worksheet_code, value: @temporary_worksheet_code %>
 
 		<%= f.button :submit, 'Next page', class: 'btn btn-primary' %>
 	

@@ -1,6 +1,7 @@
 class WorksheetsController < ApplicationController
   def new
     @worksheet = Worksheet.new
+    @value = @worksheet.values.build
   end
   
   def create

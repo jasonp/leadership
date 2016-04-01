@@ -1,18 +1,37 @@
 <h1>Values & Behaviors</h1>
 <p class="text-muted">(page 1 of 3)</p>
 
-<p>Every organization operates according to a set of values and default behaviors. Sometimes these are codified in company values documents, sometimes the espoused values are not backed up by actual behavior (rectifying this gap is itself an adaptive leadership challenge), and sometimes it's simply unwritten culture built up over time.</p>
+<p>Every organization operates according to a set of values and default behaviors. Sometimes these are codified in company values statements, HR policies, or internal social networks, and sometimes it's simply unwritten culture built up over time.</p>
 
-<p>Think about the key values and behaviors in your organization that <strong>need to change</strong> in order for you to successfully lead adaptive change. Add them here -- it's good to be thorough, but it might be best to keep the list to a manageable number. If necessary, you can break your challenge into smaller components and complete this worksheet more than once, targeted each smaller portion as you go.</p>
+<p>Leadership is called for when:</p>
 
-<div class="behaviors" id="new_behaviors_forms">
+<ul>
+	<li>The espoused values of the organization are out of line with actual behavior</li>
+	<li>The values and behaviors of the organization are out of line with an unalterable reality</li>
+</ul>
+
+<p>Think about the key values or behaviors in your organization that <strong>need to change</strong> in order for the organization to thrive. List those values or behaviors below:</p>	
+
+<div class="values" id="listed_values">
+	
+</div>
+
+<div class="values" id="new_values_forms">
+	<%= simple_form_for(@value) do |f| %>
+	
+		<%= f.input :content, input_html: { maxlength: 60 }, label: 'Value:', label_html: { class: 'sr-only' }, placeholder: 'e.g. Customers first' %>
+		<%= f.button :submit, 'Add This Value or Behavior', class: 'btn btn-primary' %>
+	
+	<% end %>
 
 </div>
 
-<%= simple_form_for(@worksheet) do |f| %>
+<div class="form_div bump20">
+	<%= simple_form_for(@worksheet) do |f| %>
 
-	<%= f.input :change_needed, placeholder: 'e.g. To survive, we must cannibalize our reseller network.', as: :text %>
+		<%= f.input :change_needed, label: 'How do these values or behaviors need to change?', hint: 'In a few sentences or less, describe the change you hope to accomplish in terms of the values or behaviors you listed above.', placeholder: 'e.g. To survive, we must cannibalize our reseller network.' %>
 
-	<%= f.button :submit, 'Next page', class: 'btn btn-primary' %>
+		<%= f.button :submit, 'Next page', class: 'btn btn-primary' %>
 	
-<% end %>
+	<% end %>
+</div>

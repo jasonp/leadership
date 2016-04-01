@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160331103350) do
+ActiveRecord::Schema.define(version: 20160401010408) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "values", force: :cascade do |t|
+    t.integer  "worksheet_id"
+    t.text     "content"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "worksheets", force: :cascade do |t|
     t.text     "change_needed"

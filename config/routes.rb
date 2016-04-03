@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'loyalties/new'
+
   get 'worksheets/new'
 
   get 'worksheets/index'
@@ -13,6 +15,7 @@ Rails.application.routes.draw do
   
   resources :worksheets do
     resources :stakeholders
+    resources :loyalties
   end
   resources :values 
  

@@ -1,0 +1,34 @@
+<h1>Loyalties</h1>
+<p class="text-muted">(page 3 of 4)</p>
+
+<p>The stakeholders you have just identified are themselves affected by various forces, factions, beliefs, and pressures. It's easy to believe, in the midst of a standoff, that someone else is simply being a stick in the mud for the sake of being difficult. But this is rarely the case. And the reality is that you will need to work with these people to create adaptive change.</p>
+
+<p>As you think about the change you have described:</p>
+
+<blockquote><%= @worksheet.change_needed %></blockquote>
+
+<p>And the stakeholders you have listed -- what loyalties to these people have?</p>
+
+<p>Think broadly. Sometimes a loyalty is to a specific group of employees or direct reports like draftsmen, copywriters, or engineers. Sometimes it's more personal, like a reluctance to disappoint a partner, a parent, or a child.</p> 
+
+<p>Add the appropriate loyalties to the stakeholders listed below. It's probably a good idea to make it a full sentence or even two, just to make sure you've summarized the loyalty and how it relates to the change you hope to accomplish.</p> 	
+
+<div class="loyalties">
+	
+	<% @worksheet.stakeholders.each do |s| %>
+		<h4><%= s.name %></h4>
+		<div class="loyalty_list" id="loyalty-list-<%= s.id %>"></div>
+		<div id="loyalty-form-<%= s.id %>">
+			<%= render partial: "new_loyalty_form", locals: {s: s} %>
+		</div>	
+	<% end %>
+	
+</div>
+
+<p class="bump20">Great! Just one more step...</p>
+
+<div class="form_div bump20">
+	<a href="<%= worksheet_path(@worksheet) %>">
+		<input type="submit" name="submit" value="Next page" class="btn btn-success"></input>
+	</a>
+</div>

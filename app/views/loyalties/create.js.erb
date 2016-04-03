@@ -1,0 +1,3 @@
+$("#loyalty-list-<%= escape_javascript(@stakeholder.id.to_s) %>").append("<%= escape_javascript(render '/loyalties/listed_loyalty')%>");
+$("#loyalty-form-<%= escape_javascript(@stakeholder.id.to_s) %>").empty();
+$("#loyalty-form-<%= escape_javascript(@stakeholder.id.to_s) %>").append("<%= escape_javascript(render partial: 'new_loyalty_form', locals: {s: @stakeholder})%>");

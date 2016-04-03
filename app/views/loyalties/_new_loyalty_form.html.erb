@@ -1,0 +1,8 @@
+<%= simple_form_for(@loyalty, url: worksheet_loyalties_path, method: :post, remote: true) do |f| %>
+
+	<%= f.input :content, label: 'Loyalty:', label_html: { class: 'sr-only' }, placeholder: 'e.g. Copywriters: Wendy oversees most of the copywriters in our office, and this change could put their jobs at risk.' %>
+	
+	<%= f.hidden_field :stakeholder_id, value: s.id %>
+	<%= f.button :submit, 'Add This Loyalty', class: 'btn btn-primary' %>
+
+<% end %>

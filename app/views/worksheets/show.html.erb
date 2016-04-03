@@ -11,5 +11,10 @@
 <ol>
 	<% @worksheet.stakeholders.each do |s| %>
 		<li><%= s.name %></li>
+		<ul>
+			<% s.loyalties.each do |l| %>
+				<li><%= l.content %></li>
+			<% end %>
+		</ul>	
 	<% end %>	
 </ol>

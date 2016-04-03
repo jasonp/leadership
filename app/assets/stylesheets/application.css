@@ -22,3 +22,7 @@ footer {
 	font-size: 10px;
 	margin-bottom: 20px;
 }
+
+.padding {
+	padding: .8em;
+}

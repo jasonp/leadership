@@ -6,3 +6,10 @@
 		<li><%= val.content %></li>
 	<% end %>	
 </ol>
+
+<p>Stakeholders:</p>
+<ol>
+	<% @worksheet.stakeholders.each do |s| %>
+		<li><%= s.name %></li>
+	<% end %>	
+</ol>

@@ -1,0 +1,30 @@
+<h1>Stakeholders</h1>
+<p class="text-muted">(page 2 of 4)</p>
+
+<p>Think about the key people who will be affected by the change in values or behaviors you have described:</p>
+
+<blockquote><%= @worksheet.change_needed %></blockquote>
+
+<p>People resist change because they fear loss: loss of status, loss of power, loss of control, loss of their jobs -- whether the loss is real or imagined is irrelevant, because the fear is real.</p>
+
+<p>Successfully shepherding change through your organization will require understanding the fears and resistances from the stakeholders who have the power to stand in your way, or to be your allies. Trying to understand the issues from their perspective is a critical step in this process.</p> 
+
+<p>Begin by listing these stakeholders here:</p> 	
+
+<div class="stakeholders" id="listed_stakeholders">
+	
+</div>
+
+<div class="stakeholders" id="new_stakeholders_forms">
+	<%= render 'new_stakeholder_form' %>
+</div>
+
+<p class="bump20">It's a good idea to try to keep this list manageable. If you're in a smaller organization, it could represent a significant portion of the team. If you're part of a much larger organization, try to limit this list to the people who have the influence and authority, whether that authority is explicit (CEO) or implicit (old wisdom).</p>
+
+<p>It's also a good idea to include people above you in the hierarchy, if there are any.</p>
+
+<div class="form_div bump20">
+	<a href="<%= worksheet_path(@worksheet) %>">
+		<input type="submit" name="submit" value="Next page" class="btn btn-primary"></input>
+	</a>
+</div>

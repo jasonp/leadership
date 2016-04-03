@@ -1,0 +1,3 @@
+$("#listed_stakeholders").append("<%= escape_javascript(render '/stakeholders/listed_stakeholder')%>");
+$("#new_stakeholders_forms").empty();
+$("#new_stakeholders_forms").append("<%= escape_javascript(render '/stakeholders/new_stakeholder_form')%>");

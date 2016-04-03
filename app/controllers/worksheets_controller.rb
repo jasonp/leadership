@@ -16,7 +16,8 @@ class WorksheetsController < ApplicationController
         v.save
       end
       
-      redirect_to worksheet_path(@worksheet)
+      @stakeholder = @worksheet.stakeholders.build
+      redirect_to new_worksheet_stakeholder_path(@worksheet, @stakeholder)
     else
       render 'new'
     end

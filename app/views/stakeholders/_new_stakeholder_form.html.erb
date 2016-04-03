@@ -1,0 +1,8 @@
+<%= simple_form_for(@stakeholder, url: worksheet_stakeholders_path, method: :post, remote: true) do |f| %>
+
+	<%= f.input :name, label: 'Stakeholder:', label_html: { class: 'sr-only' }, placeholder: 'e.g. J.K. Rowling', as: :string %>
+	
+	<%= f.hidden_field :worksheet_id, value: @worksheet.id %>
+	<%= f.button :submit, 'Add This Stakeholder', class: 'btn btn-primary' %>
+
+<% end %>

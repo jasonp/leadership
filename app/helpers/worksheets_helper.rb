@@ -89,5 +89,6 @@ module WorksheetsHelper
     return antifragility_score 
     
   end
+  
 
 end

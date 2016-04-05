@@ -1,16 +1,16 @@
 <h1>Values & Behaviors</h1>
 <p class="text-muted">(page 1 of 4)</p>
 
-<p>Every organization operates according to a set of values and default behaviors. Sometimes these are codified in company values statements, HR policies, or internal social networks, and sometimes it's simply unwritten culture built up over time.</p>
+<p>Every organization operates according to a set of default behaviors or organizational habits. Sometimes these are codified in company values statements, HR policies, or internal social networks, and sometimes it's simply unwritten culture built up over time.</p>
 
 <p>Leadership is called for when:</p>
 
 <ul>
 	<li>The espoused values of the organization are out of line with actual behavior</li>
-	<li>The values and behaviors of the organization are out of line with an unalterable reality</li>
+	<li>The behaviors of the organization are out of line with an unalterable reality</li>
 </ul>
 
-<p>Think about the key values or behaviors in your organization that <strong>need to change</strong> in order for the organization to thrive. List those values or behaviors below:</p>	
+<p>Think about the key behaviors in your organization that <strong>need to change</strong> in order for the organization to thrive. List those behaviors below:</p>	
 
 <div class="values" id="listed_values">
 	
@@ -23,7 +23,7 @@
 <div class="form_div bump20">
 	<%= simple_form_for(@worksheet) do |f| %>
 
-		<%= f.input :change_needed, label: 'How do these values or behaviors need to change?', hint: 'In a few sentences or less, describe the change you hope to accomplish in terms of the values or behaviors you listed above.', placeholder: 'e.g. To survive, we must cannibalize our reseller network.' %>
+		<%= f.input :change_needed, label: 'How do these behaviors need to change?', hint: 'In a few sentences or less, describe the change you hope to accomplish in terms of the behaviors you listed above.', placeholder: 'e.g. To grow and compete, we must stop forming fiefdoms and actually integrate the competitor we purchased.' %>
 		
 		<%= f.hidden_field :temporary_worksheet_code, value: @temporary_worksheet_code %>
 

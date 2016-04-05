@@ -9,4 +9,10 @@ class PagesController < ApplicationController
     
   end
   
+  private
+  
+    def worksheet_params
+      params.require(:worksheet).permit(:email, :permission_to_contact)
+    end
+  
 end

@@ -44,7 +44,10 @@ class WorksheetsController < ApplicationController
   
   def update
     @worksheet = Worksheet.find(params[:id])
-    @worksheet.update_attributes(worksheet_params)
+    if worksheet_params
+      @worksheet.update_attributes(worksheet_params)
+    end
+
     
     if @worksheet.save
       redirect_to gateway_path
@@ -60,7 +63,9 @@ class WorksheetsController < ApplicationController
     session[:temporary_worksheet_code] = nil
     
     if worksheet_params[:email] != nil
-      @worksheet.update_attributes(worksheet_params)
+      if worksheet_params && @worksheet
+        @worksheet.update_attributes(worksheet_params) 
+      end  
       LinkMailer.send_secret_link(@worksheet, twc).deliver_now
       redirect_to worksheet_path(@worksheet, twc: twc)
     else
@@ -98,7 +103,9 @@ class WorksheetsController < ApplicationController
   private
   
     def worksheet_params
-      params.require(:worksheet).permit(:change_needed, :temporary_worksheet_code, :elephant1, :elephant2, :responsible1, :responsible2, :independent1, :independent2, :develop1, :develop2, :reflection1, :reflection2, :antifragile, :permission_to_contact, :email)
+      if params[:worksheet]
+        params.require(:worksheet).permit(:change_needed, :temporary_worksheet_code, :elephant1, :elephant2, :responsible1, :responsible2, :independent1, :independent2, :develop1, :develop2, :reflection1, :reflection2, :antifragile, :permission_to_contact, :email)
+      end  
     end
     
 

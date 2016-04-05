@@ -1,7 +1,32 @@
-<h1></h1>
+<h1>Antifragility</h1>
 
 <p>Questions derived from page 108 of The Practice of Adaptive Leadership.</p>
 
 <p>I'm not sure yet how they'll be presented (scale of 1-10?), or how many there will be. Maybe three to each of the seven characteristics.</p>
 
 <p>Also, I should mention Antifragility and Taleb as another measure of an organizations Adaptive Capacity -- what level of stress can it withstand?</p>
+
+<div class="form_div bump20">
+	<%= simple_form_for(@worksheet, html: {class: "form"}) do |f| %>
+
+		<%= f.input :elephant1, label: 'How well are troublemakers tolerated?', hint: '1 means not very well; 10 is very well tolerated.', collection: 1..10, as: :radio_buttons, input_html: {class: 'radio-inline'} %>
+		<%= f.input :elephant2, label: 'How honest are debrief or post-mortem meetings?', hint: '1 means not very honest; 10 is very honest.', collection: 1..10, as: :radio_buttons, input_html: {class: 'radio-inline'} %>
+		
+		<%= f.input :responsible1, label: 'Is there a suggestion box or other method of submitting ideas to improve the business?', as: :radio_buttons %>	
+		<%= f.input :responsible2, label: 'Do different departments feel that they can and should collaborate?', as: :radio_buttons %>
+
+		<%= f.input :independent1, label: 'Are promotions ever offered to people who disagree with their bosses?', as: :radio_buttons %>		
+		<%= f.input :independent2, label: 'Are small experiments encouraged without approval from higher up?', as: :radio_buttons %>
+		
+		<%= f.input :develop1, label: 'Is there a cultural expectation of mentorship within the organization?', as: :radio_buttons %>
+		<%= f.input :develop2, label: 'Do people have a relatively clear idea of what their path for growth in the organization might look like?', as: :radio_buttons %>
+		
+		<%= f.input :reflection1, label: 'Are people provided a professional development budget and encouraged to use it for conferences, retreats, training and so on?', as: :radio_buttons %>
+		<%= f.input :reflection2, label: 'Does the organization work to assemble diverse teams and perspectives to tackle projects?', as: :radio_buttons %>	
+		
+		<%= f.input :antifragile, label: 'How bendable are most of the rules and policies in the organization?', hint: '1 means not very bendable; 10 is very bendy.', collection: 1..10, as: :radio_buttons, input_html: {class: 'radio-inline'} %>									
+
+		<%= f.button :submit, 'Finish', class: 'btn btn-success' %>
+	
+	<% end %>
+</div>

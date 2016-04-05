@@ -1,3 +1,44 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/**/
+/* Results page-- which is actually a Worksheets page but whatever */
+/**/
+
+.change_statement {
+	font-style: italic;
+	margin-bottom: 1em;
+	padding: .5em 1em .5em 1em;
+	border: 1px solid #333;
+}
+
+.antifragile_results_bar_container {
+	width: 100%;
+	
+	margin-bottom: 1em;
+}
+
+.antifragile_results_bar {
+	height: 35px;
+	background: #666;
+	width: 32%;
+	text-align: center;
+	padding-top: .2em;
+	color: #eee;
+	display: inline-block;
+}
+
+
+#red_result {
+	background: red;
+	color: black;
+}
+#yellow_result {
+	background: yellow;
+	color: black;
+}
+#green_result {
+	background: green;
+	color: #efefef;
+}

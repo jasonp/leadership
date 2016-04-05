@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160403012006) do
+ActiveRecord::Schema.define(version: 20160403212954) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,19 @@ ActiveRecord::Schema.define(version: 20160403012006) do
     t.string   "temporary_worksheet_code"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.integer  "elephant1"
+    t.integer  "elephant2"
+    t.string   "responsible1"
+    t.string   "responsible2"
+    t.string   "independent1"
+    t.string   "independent2"
+    t.string   "develop1"
+    t.string   "develop2"
+    t.string   "reflection1"
+    t.string   "reflection2"
+    t.integer  "antifragile"
+    t.string   "permission_to_contact"
+    t.text     "email"
   end
 
 end

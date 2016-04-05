@@ -3,30 +3,70 @@
 
 
 
-<p class="blockquote"><%= @worksheet.change_needed %></p>
+<h4>Your statement of change</h4>
+<div class="change_statement"><%= @worksheet.change_needed %></div>
 
-<p>Values:</p>
-<ol>
+
+<table class="table">
+	<thead>
+		<tr><th>Values or Behaviors that need to change:</th></tr>
+	</thead>
+	<tbody>
 	<% @worksheet.values.each do |val| %>
-		<li><%= val.content %></li>
+		<tr>
+			<td><%= val.content %></td>
+		</tr>	
 	<% end %>	
-</ol>
+	</tbody>
+</table>	
 
-<p>Stakeholders:</p>
-<ol>
+<h4>Working with stakeholders</h4>
+
+<p>As you plan your actions, keep the stakeholders you've identified and their motivations in mind. Who could be an ally in change? Who is most threatened by the change you seek? What's the right way to approach each of them about change?</p>
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Stakeholder</th>
+			<th>Their Loyalties</th>
+		</tr>
+	</thead>
+	<tbody>
 	<% @worksheet.stakeholders.each do |s| %>
-		<li><%= s.name %></li>
-		<ul>
-			<% s.loyalties.each do |l| %>
-				<li><%= l.content %></li>
-			<% end %>
-		</ul>	
-	<% end %>	
-</ol>
+		<tr>
+			<td>
+				<%= s.name %>
+			</td>
+			<td>
+				<% s.loyalties.each do |l| %>
+					<li><%= l.content %></li>
+				<% end %>
+			</td>
+		</tr>	
+	<% end %>
+	</tbody>	
+</table>
+
+<h4>The work of leadership</h4>
+
+<h5>Your organization's capacity for adaptive work (antifragility):</h5>
+
+<div class="antifragile_results_bar_container">
+	<div class="antifragile_results_bar" id="<%= @red_result %>">Low</div>
+	<div class="antifragile_results_bar" id="<%= @yellow_result %>">Average</div>
+	<div class="antifragile_results_bar" id="<%= @green_result %>">High</div>
+</div>
+
+<%= render partial: @red_result if @red_result  %>
+<%= render partial: @yellow_result if @yellow_result %>
+<%= render partial: @green_result if @green_result %>
+
+
+<p>No matter where you start or what your goal is, it is always best to tackle tough leadership challenges with allies. Find mentors, partners, and supporters where you can. Leading change is a process of managing conflict, and it will test your own personal capacity for these burdens; do not carry them alone.</p>
+
 
 <div class="bg-info padding">
 	<h5>Resources</h5>
-	<p>Adaptive leadership is a deep and engaging subject. You can learn a lot by reading a few books:</p>
+	<p>Adaptive leadership is a deep and engaging subject. You can learn a lot by reading a few books -- many of which were relied on for creating this interactive worksheet. Here are some that I recommend:</p>
 	<ul>
 		<li>Leadership Without Easy Answers</li>  
 		<li>The Practice of Adaptive Leadership</li> 
@@ -36,4 +76,4 @@
 	</ul>
 </div>
 
-<p class="text-muted">If you found this worksheet engaging and want to chat more, I'm always available via email: jason at prestons dot me.</p>
+<p class="text-muted bump20">If you found this worksheet engaging and want to chat more, I'm always available via email: jason at prestons dot me.</p>

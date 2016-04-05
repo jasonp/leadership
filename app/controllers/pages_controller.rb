@@ -3,9 +3,8 @@ class PagesController < ApplicationController
   end
   
   def gateway
-    twc = session[:temporary_worksheet_code]
+    twc = session[:temporary_worksheet_code] || params[:twc]
     @worksheet = Worksheet.where(temporary_worksheet_code: twc).first
-    
     
   end
   

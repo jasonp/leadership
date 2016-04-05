@@ -47,7 +47,7 @@ class WorksheetsController < ApplicationController
     @worksheet.update_attributes(worksheet_params)
     
     if @worksheet.save
-      redirect_to worksheet_path(@worksheet)
+      redirect_to gateway_path
     else
       render 'edit'  
     end
@@ -55,6 +55,16 @@ class WorksheetsController < ApplicationController
   end
   
   def process_gateway
+    twc = session[:temporary_worksheet_code]
+    @worksheet = Worksheet.where(temporary_worksheet_code: twc).first
+    session[:temporary_worksheet_code] = nil
+    
+    if worksheet_params[:email] != nil
+      @worksheet.update_attributes(worksheet_params)
+      redirect_to worksheet_path(@worksheet, twc: twc)
+    else
+      redirect_to worksheet_path(@worksheet, twc: twc)
+    end
     
   end
 

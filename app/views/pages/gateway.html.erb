@@ -4,7 +4,14 @@
 
 <p>UNLESS you want to save it.</p> 
 
-<p>If you want to save it, drop your email address here and we'll use it to create a unique URL for your worksheet that you can access at any time in the future.</p>
+<p>If you want to save it, drop your email address here and we'll email you a secret link that you can use to review your worksheet at any time.</p>
 
 <p>Otherwise, just leave the field blank and hit the big green button.</p>
 
+<%= simple_form_for(@worksheet, url: worksheets_process_gateway_path, method: :post, html: {class: "form"}) do |f| %>
+
+	<%= f.input :email, label_html: {class: 'sr-only'}, placeholder: "your.name@example.com", as: :string %>
+	
+	<%= f.button :submit, 'Finish', class: 'btn btn-success' %>
+
+<% end %>

@@ -61,6 +61,7 @@ class WorksheetsController < ApplicationController
     
     if worksheet_params[:email] != nil
       @worksheet.update_attributes(worksheet_params)
+      LinkMailer.send_secret_link(@worksheet, twc).deliver_now
       redirect_to worksheet_path(@worksheet, twc: twc)
     else
       redirect_to worksheet_path(@worksheet, twc: twc)

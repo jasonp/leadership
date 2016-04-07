@@ -62,7 +62,7 @@ class WorksheetsController < ApplicationController
     @worksheet = Worksheet.where(temporary_worksheet_code: twc).first
     session[:temporary_worksheet_code] = nil
     
-    if worksheet_params[:email] != nil
+    if worksheet_params[:email] != nil && worksheet_params[:email] != ""
       if worksheet_params && @worksheet
         @worksheet.update_attributes(worksheet_params) 
       end  
